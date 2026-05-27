@@ -1,108 +1,583 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart Shopping Deals</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SDDR Digital</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <style>
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #f9f9f9;
-  color: #333;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
-section {
-  padding: 60px 20px;
-  max-width: 1100px;
-  margin: auto;
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0f172a;
+color:#fff;
+line-height:1.6;
 }
-.hero {
-  background: linear-gradient(135deg, #ff7a18, #ffb347);
-  color: white;
-  text-align: center;
-  padding: 90px 20px;
+
+header{
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
+background:rgba(15,23,42,0.95);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(255,255,255,0.08);
 }
-.hero h1 {
-  font-size: 2.5rem;
+
+.navbar{
+max-width:1200px;
+margin:auto;
+padding:15px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
-.hero p {
-  font-size: 1.1rem;
+
+.logo{
+font-size:1.6rem;
+font-weight:700;
+color:#38bdf8;
 }
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 15px 30px;
-  background: #111;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 600;
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
 }
-.box {
-  background: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+
+nav ul li a{
+text-decoration:none;
+color:#fff;
+font-weight:500;
+transition:0.3s;
 }
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+
+nav ul li a:hover{
+color:#38bdf8;
 }
-input {
-  width: 100%;
-  padding: 14px;
-  margin-top: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:120px 20px 80px;
+background:linear-gradient(to right,#020617,#0f172a,#111827);
 }
-.footer {
-  text-align: center;
-  font-size: 14px;
-  padding: 20px;
-  color: #777;
+
+.hero-content{
+max-width:1200px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:50px;
+align-items:center;
+}
+
+.hero-text h1{
+font-size:3.5rem;
+line-height:1.2;
+margin-bottom:20px;
+}
+
+.hero-text h1 span{
+color:#38bdf8;
+}
+
+.hero-text p{
+font-size:1.05rem;
+color:#cbd5e1;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 28px;
+background:#38bdf8;
+color:#000;
+font-weight:600;
+text-decoration:none;
+border-radius:50px;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(56,189,248,0.3);
+}
+
+.hero-image{
+display:flex;
+justify-content:center;
+}
+
+.hero-card{
+width:100%;
+max-width:420px;
+background:#111827;
+padding:30px;
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,0.4);
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.hero-card h3{
+margin-bottom:20px;
+color:#38bdf8;
+}
+
+.stat{
+display:flex;
+justify-content:space-between;
+padding:12px 0;
+border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+section{
+padding:90px 20px;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-title h2{
+font-size:2.5rem;
+margin-bottom:10px;
+}
+
+.section-title p{
+color:#94a3b8;
+}
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.service-card{
+background:#111827;
+padding:30px;
+border-radius:20px;
+transition:0.3s;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.service-card:hover{
+transform:translateY(-8px);
+border-color:#38bdf8;
+}
+
+.service-card i{
+font-size:2rem;
+margin-bottom:20px;
+color:#38bdf8;
+}
+
+.service-card h3{
+margin-bottom:15px;
+}
+
+.service-card p{
+color:#cbd5e1;
+font-size:0.95rem;
+}
+
+.packages{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.package-card{
+background:#111827;
+padding:35px;
+border-radius:20px;
+text-align:center;
+border:1px solid rgba(255,255,255,0.06);
+transition:0.3s;
+}
+
+.package-card:hover{
+transform:scale(1.03);
+}
+
+.package-card h3{
+font-size:1.5rem;
+margin-bottom:10px;
+}
+
+.price{
+font-size:2rem;
+font-weight:700;
+color:#38bdf8;
+margin-bottom:20px;
+}
+
+.package-card ul{
+list-style:none;
+margin-bottom:25px;
+}
+
+.package-card ul li{
+padding:8px 0;
+color:#cbd5e1;
+}
+
+.about{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:40px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:20px;
+}
+
+.about-text h2{
+font-size:2.3rem;
+margin-bottom:20px;
+}
+
+.about-text p{
+color:#cbd5e1;
+margin-bottom:15px;
+}
+
+.contact-box{
+background:#111827;
+padding:40px;
+border-radius:25px;
+text-align:center;
+}
+
+.contact-box h2{
+margin-bottom:15px;
+font-size:2rem;
+}
+
+.contact-links{
+margin-top:25px;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.contact-links a{
+text-decoration:none;
+color:#fff;
+background:#1e293b;
+padding:14px 20px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.contact-links a:hover{
+background:#38bdf8;
+color:#000;
+}
+
+footer{
+text-align:center;
+padding:25px;
+background:#020617;
+color:#94a3b8;
+}
+
+.menu-toggle{
+display:none;
+font-size:1.5rem;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+nav ul{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:#0f172a;
+flex-direction:column;
+text-align:center;
+display:none;
+padding:20px 0;
+}
+
+nav ul.active{
+display:flex;
+}
+
+.menu-toggle{
+display:block;
+}
+
+.hero-text h1{
+font-size:2.5rem;
+}
+
+.section-title h2{
+font-size:2rem;
+}
 }
 </style>
 </head>
-
 <body>
 
-<section class="hero">
-  <h1>Discover Trending Online Shopping Deals</h1>
-  <p>Smart picks • Real discounts • No guesswork</p>
-  <a href="#signup" class="btn">Get Today’s Best Deals</a>
+<header>
+<div class="navbar">
+<div class="logo">SDDR Digital</div>
+
+<nav>
+<ul id="menu">
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#packages">Packages</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<div class="menu-toggle" id="toggle">
+<i class="fas fa-bars"></i>
+</div>
+</div>
+</header>
+
+<section class="hero" id="home">
+<div class="hero-content">
+
+<div class="hero-text">
+<h1>Helping Small Businesses <span>Go Online</span></h1>
+<p>
+Professional website creation, Facebook page setup, branding, and digital services for small businesses.
+Affordable, modern, and mobile-friendly solutions.
+</p>
+<a href="#contact" class="btn">Start Your Business Online</a>
+</div>
+
+<div class="hero-image">
+<div class="hero-card">
+<h3>Our Services</h3>
+
+<div class="stat">
+<span>Website Creation</span>
+<span>✔</span>
+</div>
+
+<div class="stat">
+<span>Facebook Setup</span>
+<span>✔</span>
+</div>
+
+<div class="stat">
+<span>Graphic Design</span>
+<span>✔</span>
+</div>
+
+<div class="stat">
+<span>Online Ordering Setup</span>
+<span>✔</span>
+</div>
+
+<div class="stat">
+<span>Business Branding</span>
+<span>✔</span>
+</div>
+
+</div>
+</div>
+
+</div>
 </section>
 
-<section>
-  <div class="grid">
-    <div class="box">
-      <h3>❌ Overpriced Products?</h3>
-      <p>Most shoppers overpay because they don’t know where to look.</p>
-    </div>
-    <div class="box">
-      <h3>✅ We Do the Searching</h3>
-      <p>Only trending and value-for-money products make the list.</p>
-    </div>
-  </div>
+<section id="services">
+<div class="container">
+
+<div class="section-title">
+<h2>Our Services</h2>
+<p>Digital solutions for modern businesses</p>
+</div>
+
+<div class="services-grid">
+
+<div class="service-card">
+<i class="fas fa-globe"></i>
+<h3>Website Creation</h3>
+<p>Modern and responsive websites,Landing Pages for restaurants, resorts, salons, stores, and online sellers.</p>
+</div>
+
+<div class="service-card">
+<i class="fab fa-facebook"></i>
+<h3>Facebook Setup</h3>
+<p>Professional Facebook pages with branding, business info setup, and engaging layouts.</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-palette"></i>
+<h3>Graphic Design</h3>
+<p>Creative posters, menus, logos, tarpaulins, social media posts, and marketing graphics.</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-cart-shopping"></i>
+<h3>Online Ordering</h3>
+<p>Simple online ordering systems and forms for food businesses and local shops.</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-bullhorn"></i>
+<h3>Business Promotion</h3>
+<p>Boost your business visibility through digital marketing and promotional content.</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-mobile-screen"></i>
+<h3>Mobile Friendly</h3>
+<p>All websites are optimized for phones, tablets, and desktops for better customer experience.</p>
+</div>
+
+</div>
+
+</div>
 </section>
 
-<section id="signup">
-  <div class="box">
-    <h2>🎁 Get FREE Shopping Deals List</h2>
-    <p>Enter your email to receive today’s best deals.</p>
+<section id="packages">
+<div class="container">
 
-    <!-- Replace with your Email or ManyChat form -->
-    <input type="email" placeholder="Your Email">
-    <a href="YOUR_AFFILIATE_LINK_HERE" class="btn">Send Me the Deals</a>
-  </div>
+<div class="section-title">
+<h2>Affordable Packages</h2>
+<p>Perfect for startups and small businesses</p>
+</div>
+
+<div class="packages">
+
+<div class="package-card">
+<h3>Starter</h3>
+<div class="price">FREE</div>
+<ul>
+<li>Simple One-Page Website</li>
+<li>Facebook Page Setup</li>
+<li>Cover Photo Design</li>
+<li>Profile Design</li>
+<li>5 Sample Posts</li>
+<li>Basic Branding</li>
+</ul>
+<a href="#contact" class="btn">Get Started</a>
+</div>
+
+<div class="package-card">
+<h3>Premium Business Website</h3>
+<div class="price">₱599</div>
+<ul>
+<li>Responsive Website</li>
+<li>Mobile Friendly</li>
+<li>Contact Buttons</li>
+<li>Google Maps</li>
+<li>Social Media Integration</li>
+</ul>
+<a href="#contact" class="btn">Get Started</a>
+</div>
+
+<div class="package-card">
+<h3>Monthly Management</h3>
+<div class="price">₱1000/mo</div>
+<ul>
+<li>Content Posting</li>
+<li>Promotional Graphics</li>
+<li>Page Updates</li>
+<li>Marketing Support</li>
+<li>Customer Engagement</li>
+</ul>
+<a href="#contact" class="btn">Get Started</a>
+</div>
+
+</div>
+
+</div>
 </section>
 
-<section>
-  <h2>🔥 Trending Categories</h2>
-  <div class="grid">
-    <div class="box">📱 Gadgets</div>
-    <div class="box">🏠 Home Essentials</div>
-    <
+<section id="about">
+<div class="container">
+
+<div class="about">
+
+<div class="about-text">
+<h2>Why Choose SDDR Digital?</h2>
+<p>
+We help small businesses establish a strong online presence through affordable and professional digital services.
+</p>
+
+<p>
+Our goal is to make websites and online marketing simple, accessible, and effective for local businesses.
+</p>
+
+<p>
+Whether you own a food business, resort, salon, or online store, we can help your brand stand out online.
+</p>
+
+<a href="https://web.facebook.com/ddsnooky/" class="btn">Work With Us</a>
+</div>
+
+<div>
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="SDDR Digital">
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+
+<div class="contact-box">
+<h2>Let's Build Your Business Online</h2>
+<p>
+Ready to create your website or improve your online presence?
+Message SDDR Digital today.
+</p>
+
+<div class="contact-links">
+<a href="https://web.facebook.com/ddsnooky/"><i class="fab fa-facebook"></i> Facebook Page</a>
+<a href="https://web.facebook.com/ddsnooky/"><i class="fab fa-facebook-messenger"></i> Messenger</a>
+<a href="#"><i class="fas fa-phone"></i> Contact Number</a>
+<a href="#"><i class="fas fa-envelope"></i> Email Us</a>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+<p>© 2026 SDDR Digital. All Rights Reserved.</p>
+</footer>
+
+<script>
+const toggle = document.getElementById('toggle');
+const menu = document.getElementById('menu');
+
+toggle.addEventListener('click', () => {
+menu.classList.toggle('active');
+});
+</script>
+
+</body>
+</html>
